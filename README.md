@@ -1,6 +1,8 @@
 # Interactive-Visualizations-and-Dashboards-Project
 Belly Button Biodiversity
 
+This Dashborad has been deployed on: https://belly-button-biodiversity73.herokuapp.com/ 
+
 In this assignment, you will build an interactive dashboard to explore the Belly Button Biodiversity DataSet.
 
 Step 1 - Plotly.js
