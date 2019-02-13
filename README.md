@@ -1,57 +1,37 @@
-# Interactive-Visualizations-and-Dashboards-Project
-Belly Button Biodiversity
+# Belly Button Biodiversity Dashboard
 
-This Dashborad has been deployed on: https://belly-button-biodiversity73.herokuapp.com/ 
+## Preview
 
-In this assignment, you will build an interactive dashboard to explore the Belly Button Biodiversity DataSet.
+This application is an interactive dashboard to analyze the relative abundance of different microbial “species” (technically operational taxonomic units, OTUs) across large taxonomic data matrix and meta-data matrix for [belly buttons microbes samples](http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/).
+It's a useful tool for investigating the microbes inhabiting our navels and the factors that might influence the microscopic life.
 
-Step 1 - Plotly.js
-Use Plotly.js to build interactive charts for your dashboard.
+[View Website](https://belly-button-biodiversity73.herokuapp.com/)
 
-Create a PIE chart that uses data from your samples route (/samples/<sample>) to display the top 10 samples.
+## Method & Usage
 
-Use sample_values as the values for the PIE chart
+### Step 1 - Flask API
 
-Use otu_ids as the labels for the pie chart
+  * Use Flask to design an API for loading dataset and to serve the HTML and JavaScript required for dashboard page 
+  
+  * Use the Bootstrap grid system to create the structure of the dashboard page
 
-Use otu_labels as the hovertext for the chart
+### Step 2 - Use Plotly.js to build interactive charts for the dashboard
 
-Create a Bubble Chart that uses data from your samples route (/samples/<sample>) to display each sample.
+  * Use the route /names to populate a dropdown select element with the list of sample names
+  
+  * Create a function called optionChanged to handle the change event when a new sample is selected (i.e. fetch data for the newly selected sample)
+  
+  * Create a PIE chart that uses data from samples route to display the top 10 samples
 
-Use otu_ids for the x values
+  * Create a Bubble Chart that uses data from samples route to display each sample
 
-Use sample_values for the y values
+  * Display each key/value pair from the metadata JSON object on the page
 
-Use sample_values for the marker size
+  * Update all of the plots any time that a new sample is selected
+  
+  * Adapt the Gauge Chart to plot the Weekly Washing Frequency
 
-Use otu_ids for the marker colors
+### Step 3 - Deploy Flask app to Heroku
 
-Use otu_labels for the text values
+  * Use sqlite database to load and save new data
 
-Display the sample metadata from the route /metadata/<sample>
-
-Display each key/value pair from the metadata JSON object somewhere on the page
-Update all of the plots any time that a new sample is selected.
-
-You are welcome to create any layout that you would like for your dashboard. An example dashboard page might look something like the following.
-
-Step 2 - Heroku
-Deploy your Flask app to Heroku.
-
-You can use the provided sqlite file for the database.
-
-Ask your Instructor and TAs for help!
-
-Advanced Challenge Assignment (Optional)
-The following task is completely optional and is very advanced.
-
-Adapt the Gauge Chart from https://plot.ly/javascript/gauge-charts/ to plot the Weekly Washing Frequency obtained from the route /wfreq/<sample>
-
-You will need to modify the example gauge code to account for values ranging from 0 - 9.
-
-Update the chart whenever a new sample is selected
-
-Flask API
-Use Flask API starter code to serve the data needed for your plots.
-
-Test your routes by visiting each one in the browser.
